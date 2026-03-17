@@ -19,7 +19,7 @@ if [ ! -d "$target_dir" ]; then
 fi
 
 # 4. Search for files
-files=$(find "$source_dir" -type f -name "*.$extension")
+files=$(find "$source_dir" -maxdepth 1 -type f -name "*.$extension")
 
 if [ -z "$files" ]; then
     echo "Error: No files with extension .$extension found in source directory."
