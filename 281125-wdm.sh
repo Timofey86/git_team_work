@@ -25,3 +25,15 @@ if [ -z "$files" ]; then
     echo "Error: No files with extension .$extension found in source directory."
     exit 1
 fi
+
+# 5. Copy files
+for file in $files; do
+    cp "$file" "$target_dir"
+    if [ $? -eq 0 ]; then
+        echo "Copied: $file"
+    else
+        echo "Failed to copy: $file"
+    fi
+done
+
+echo "Done."
