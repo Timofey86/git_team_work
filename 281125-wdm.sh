@@ -17,3 +17,11 @@ if [ ! -d "$target_dir" ]; then
     echo "Error: Target directory does not exist or is not accessible."
     exit 1
 fi
+
+# 4. Search for files
+files=$(find "$source_dir" -type f -name "*.$extension")
+
+if [ -z "$files" ]; then
+    echo "Error: No files with extension .$extension found in source directory."
+    exit 1
+fi
