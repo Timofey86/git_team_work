@@ -27,13 +27,11 @@ if [ -z "$files" ]; then
 fi
 
 # 5. Copy files
-for file in $files; do
+for file in $files;
+do
     cp "$file" "$target_dir"
-    if [ $? -eq 0 ]; then
-        echo "Copied: $file"
-    else
-        echo "Failed to copy: $file"
-    fi
+    echo "Copied: $file"
+
 done
 
 echo "Done."
