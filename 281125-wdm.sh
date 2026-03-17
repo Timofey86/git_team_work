@@ -6,3 +6,14 @@ read -p "Enter target directory: " target_dir
 
 # 2. Ask for file extension
 read -p "Enter file extension: " extension
+
+# 3. Verify directories
+if [ ! -d "$source_dir" ]; then
+    echo "Error: Source directory does not exist or is not accessible."
+    exit 1
+fi
+
+if [ ! -d "$target_dir" ]; then
+    echo "Error: Target directory does not exist or is not accessible."
+    exit 1
+fi
